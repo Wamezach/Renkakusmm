@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container fade-in">
+    <h1>Welcome</h1>
+    <p id="balance">Loading balance...</p>
+    <a href="index.html">Logout</a>
+  </div>
+  <script>
+    const username = localStorage.getItem("username");
+    fetch("https://your-backend.infinityfreeapp.com/balance.php", {
+      method: "POST",
+      body: new URLSearchParams({ username })
+    })
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("balance").textContent = "Your balance: $" + data;
+    });
+  </script>
+</body>
+</html>
