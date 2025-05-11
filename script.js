@@ -1,7 +1,7 @@
 document.getElementById("loginForm")?.addEventListener("submit", function(e) {
   e.preventDefault();
   const formData = new FormData(this);
-  fetch("https://renkakusmm.free.nf/login.php", {
+  fetch("https://your-backend.infinityfreeapp.com/login.php", {
     method: "POST",
     body: formData
   })
@@ -19,7 +19,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function(e) {
 document.getElementById("registerForm")?.addEventListener("submit", function(e) {
   e.preventDefault();
   const formData = new FormData(this);
-  fetch("https://renkakusmm.free.nf/register.php", {
+  fetch("https://your-backend.infinityfreeapp.com/register.php", {
     method: "POST",
     body: formData
   })
